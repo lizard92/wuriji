@@ -1,0 +1,12 @@
+services:
+  cost-analyzer:
+    build: .
+    container_name: cost-analyzer
+    ports:
+      - "8080:3001"
+    volumes:
+      - ./data:/data
+    environment:
+      - NODE_ENV=production
+      - DATA_DIR=/data
+    restart: unless-stopped
